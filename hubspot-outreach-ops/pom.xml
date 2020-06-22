@@ -103,7 +103,7 @@
         </plugins>
     </build>
     <name>hubspot-outreach-ops</name>
-    <description>A simple java client for Outreach API.</description>
+    <description>A simple lambda function for HubSpot to Outreach contact sync.</description>
 
     <properties>
         <java.version>1.8</java.version>
