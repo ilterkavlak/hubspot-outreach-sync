@@ -44,7 +44,6 @@ Function knows where to look for credential and lookup files mentioned above via
 * **CREDENTIALS_BUCKET_NAME**: name of the bucket where credential files reside.
 * **HUBSPOT_CREDENTIALS_OBJECT_KEY**: key of the HubSpot credential file in the credentials bucket.
 * **OUTREACH_CREDENTIALS_OBJECT_KEY**: key of the Outreach credential file in the credentials bucket.
-* **OUTREACH_CREDENTIALS_OBJECT_KEY**: key of the Outreach credential file in the credentials bucket.
 
 Every time the lambda function is triggered, it checks the recently modified contact list from HubSpot and creates/updates them as prospect entities in Outreach using mapping the definitions in the property mapping file provided. Algorithm goes back until the last modified timestamp of the contact is lower than the timestamp in the lookup file. Then function saves the max timestamp found among synced contacts to the lookup file in milliseconds. This way each time the function runs it only syncs the updates occurred after the last run.
 
