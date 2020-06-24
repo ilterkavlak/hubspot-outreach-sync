@@ -21,6 +21,8 @@ public class HubSpotToOutreachSyncHelper {
     private OutreachAdapter outreachAdapter;
     private Lookup lookup;
 
+    private static List<String> LIST_OF_LIST_PROPERTIES_IN_OUTREACH = Arrays.asList("homePhones", "mobilePhones", "otherPhones", "tags", "voipPhones", "workPhones");
+
     private static HubSpotToOutreachSyncHelper hubSpotToOutreachSync;
 
     private HubSpotToOutreachSyncHelper() {
@@ -63,7 +65,7 @@ public class HubSpotToOutreachSyncHelper {
                 hubSpotOutreachFieldMapping.forEach((key, value) -> {
                     if (contact.getProperties().containsKey(key)) {
                         String fieldValue = contact.getProperties().get(key).get(HUBSPOT_CONTACT_PROPERTY_VALUE_KEY);
-                        prospectAttributes.put(value, key.equals("email") ? Collections.singletonList(fieldValue) : fieldValue);
+                        prospectAttributes.put(value, LIST_OF_LIST_PROPERTIES_IN_OUTREACH.contains(value) ? Collections.singletonList(fieldValue) : fieldValue);
                     }
                 });
                 Prospect prospect = new Prospect().setAttributes(prospectAttributes);
