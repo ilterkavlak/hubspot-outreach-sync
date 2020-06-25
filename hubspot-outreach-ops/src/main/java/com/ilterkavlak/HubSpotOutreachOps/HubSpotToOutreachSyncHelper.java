@@ -21,7 +21,7 @@ public class HubSpotToOutreachSyncHelper {
     private OutreachAdapter outreachAdapter;
     private Lookup lookup;
 
-    private static List<String> LIST_OF_LIST_PROPERTIES_IN_OUTREACH = Arrays.asList("homePhones", "mobilePhones", "otherPhones", "tags", "voipPhones", "workPhones");
+    private static List<String> LIST_OF_LIST_PROPERTIES_IN_OUTREACH = Arrays.asList("emails", "homePhones", "mobilePhones", "otherPhones", "tags", "voipPhones", "workPhones");
 
     private static HubSpotToOutreachSyncHelper hubSpotToOutreachSync;
 
