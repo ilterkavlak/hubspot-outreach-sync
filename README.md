@@ -1,3 +1,6 @@
+# Important Notice
+I am not maintaining this code anymore. However I will leave it here for those who needs some logic in here.
+
 # HubSpot-Outreach Sync
 
 HubSpot-Outreach Sync is a lambda function that you can deploy into your AWS account that provides synchronization between HubSpot CRM and Outreach CRM.
